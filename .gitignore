@@ -1,0 +1,45 @@
+# Ignore Temp directory
+temp/
+
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.acn
+*.acr
+*.alg
+*.dvi
+*.glg
+*.glo
+*.gls
+*.ist
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.pdfsync
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+
+# XeLaTeX specific files
+*.xdv
+
+# Editor backup files
+*~
+*.bak
+*.swp
+*.tmp
+*.backup
+*.sav

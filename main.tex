@@ -1,0 +1,38 @@
+\documentclass[11pt, a4paper, oneside, ngerman]{article}
+
+\input{config/setup}
+
+\begin{document}
+
+% Titelblatt
+\include{pages/cover}
+
+% Seitennummerierung mit römischen Zahlen für vordere Seiten
+\pagenumbering{Roman}
+\setcounter{page}{2}
+
+% Inhaltsverzeichnis
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\tableofcontents
+\newpage
+
+% Ab hier arabische Nummerierung
+\pagenumbering{arabic}
+
+
+\include{sections/basics}
+\include{sections/advanced}
+\include{sections/practice}
+
+
+\newpage
+
+\phantomsection{}
+% Set bibliography name and add it to the table of contents
+\renewcommand{\bibname}{Literaturverzeichnis}
+\printbibliography[title=\bibname]
+
+% Add bibliography to table of contents after printing it
+\addcontentsline{toc}{section}{\bibname}
+
+\end{document}

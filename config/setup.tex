@@ -1,0 +1,77 @@
+\usepackage[ngerman]{babel} % neue deutsche Trennungsregeln, etc
+\usepackage[T1]{fontenc} % enable hyphenation for languages with accented characters
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xurl}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{fontspec}
+\setmainfont[Path=./assets/]{calibri.ttf}
+\renewcommand{\familydefault}{\sfdefault} % Set default font to Calibri
+\usepackage{setspace} % Abstände zwischen Absätzen
+\setstretch{1.5} % 1,5 Zeilenabstand
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} % Seitenränder
+\usepackage{setspace} % For line spacing
+
+
+\usepackage{tocloft}
+
+% Schriftart für Inhaltsverzeichnis auf Calibri setzen
+\renewcommand{\cftsecfont}{\normalfont\fontsize{11pt}{1.5}\selectfont} % 1. Ebene
+\renewcommand{\cftsubsecfont}{\normalfont\fontsize{11pt}{1.5}\selectfont} % 2. Ebene
+\renewcommand{\cftsubsubsecfont}{\normalfont\fontsize{11pt}{1.5}\selectfont} % 3. Ebene
+
+% Nur die erste Ebene fett
+\renewcommand{\cftsecfont}{\normalfont\bfseries\fontsize{11pt}{1.5}\selectfont} % 1. Ebene fett
+\renewcommand{\cftsubsecfont}{\normalfont\fontsize{11pt}{1.5}\selectfont} % 2. Ebene normal
+\renewcommand{\cftsubsubsecfont}{\normalfont\fontsize{11pt}{1.5}\selectfont} % 3. Ebene normal
+
+% Linksbündige Ausrichtung
+\renewcommand{\cfttoctitlefont}{\normalfont\bfseries\Large\raggedright} % Titel "Inhaltsverzeichnis"
+\renewcommand{\cftsecpagefont}{\normalfont} % Seitenzahlen normal
+
+\renewcommand{\cftdot}{.} % Setzt die Punkte im Inhaltsverzeichnis
+\renewcommand{\cftsecdotsep}{\cftdotsep} % Falls du "section" Punkte setzen willst
+\renewcommand{\cftsubsecdotsep}{\cftdotsep} % Falls du "subsection" Punkte setzen willst
+\renewcommand{\footnotesize}{\fontsize{10pt}{1.5pt}\selectfont}
+
+% automatischens Einrücken von Absätzen verhindern
+\usepackage{changepage}
+\setlength{\parindent}{0pt}
+% 6pt Abstand nur zwischen Absätzen
+\setlength{\parskip}{6pt}{}
+
+% Bibliographie & Sondereinstellungen
+\usepackage[babel]{csquotes}
+\usepackage[backend=biber, style=apa, pagetracker, apamaxprtauth=20 ]{biblatex}
+\makeatletter
+\renewcommand*{\apablx@ifrevnameappcomma}{\@secondoftwo}
+\makeatother
+\DefineBibliographyExtras{ngerman}{%
+  \renewcommand*{\finalandcomma}{}%
+}
+
+
+%% Bibliographie einbinden
+\addbibresource{references.bib} % your bib file
+
+% Blocksatz und Silbentrennung aktivieren
+\sloppy
+
+% Überschriftenformatierung
+\titleformat{\section}
+  {\fontsize{16pt}{1.5}\bfseries\raggedright} % 1. Ebene: 16pt, linksbündig
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\fontsize{14pt}{1.5}\bfseries\raggedright} % 2. Ebene: 14pt, linksbündig
+  {\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+  {\fontsize{11pt}{1.5}\bfseries\raggedright} % 3. Ebene: 11pt, linksbündig
+  {\thesubsubsection}{1em}{}
+
+% Abstände vor und nach Überschriften
+\titlespacing*{\section}{0pt}{12pt}{12pt}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
