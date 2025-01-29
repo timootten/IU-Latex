@@ -5,13 +5,22 @@
 \usepackage{titlesec}
 \usepackage{xurl}
 \usepackage[breaklinks=true]{hyperref}
-\usepackage{fontspec}
-\setmainfont[Path=./assets/]{calibri.ttf}
-\renewcommand{\familydefault}{\sfdefault} % Set default font to Calibri
 \usepackage{setspace} % Abstände zwischen Absätzen
 \setstretch{1.5} % 1,5 Zeilenabstand
 \usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} % Seitenränder
 \usepackage{setspace} % For line spacing
+
+\usepackage{fontspec}
+
+% Calibri explizit als Sans-Serif-Font definieren
+\setsansfont[
+  Path =./assets/,
+  BoldFont = calibri-bold.ttf,    % Pfad zur fetten Version
+  ItalicFont = calibri-italic.ttf,  % Pfad zur kursiven Version
+  BoldItalicFont = calibri-bold-italic.ttf % Pfad zur fett-kursiven Version
+]{Calibri-regular.ttf}
+
+\renewcommand{\familydefault}{\sfdefault} % Set default font to Calibri
 
 
 \usepackage{tocloft}
